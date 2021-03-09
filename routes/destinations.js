@@ -3,8 +3,7 @@ var router = express.Router();
 const destinationsCtrl = require('../controllers/destinations');
 
 
-router.get('/show', destinationsCtrl.index);
-router.get('/destinations/new', destinationsCtrl.new);
+router.post('/flights/:id/destinations', destinationsCtrl.create);
 
 module.exports = router;
 

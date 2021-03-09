@@ -23,8 +23,19 @@
         <%= flight.departs %>
     </div>
     <div><strong>Destination: </strong>
-        <%= flight.destination %>
+        <%= flight.destinations %>
     </div>
+    <h2>Destination:</h2>
+    <form action="/flight/show" method="POST">
+        <select name="airport" id="">
+            <option value="AUS">AUS</option>
+            <option value="DFW">DFW</option>
+            <option value="DEN">DEN</option>
+            <option value="LAX">LAX</option>
+            <option value="SAN">SAN</option>
+            <input type="submit" value="Add Destination">
+        </select>
+    </form>
 </body>
 
 </html>
