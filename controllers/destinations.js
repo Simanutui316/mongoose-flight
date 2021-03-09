@@ -1,15 +1,15 @@
-const Destination = require('../models/destination');
-
+const Flight = require('../models/flight')
 
 module.exports = {
-    index,
+
     show,
-    new: newDestination,
-    create
+
 };
 
 function show(req, res) {
-    Destination.findById(req.params.id, function (err, destination) {
-        res.render('destinations/show', { title: 'Destination Detail', destination });
+    Flight.findById(req.params.id, function (err, flight) {
+        res.render('flights/show', {
+            flight: flight
+        });
     });
 }
