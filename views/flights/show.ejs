@@ -2,13 +2,19 @@
 <html lang="en">
 
 <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Show Details</title>
+    <link rel="stylesheet" href="public/stylesheets/style.css">
+    <title>Flight Details</title>
 </head>
 
 <body>
+    <a id="home-btn" href="/flights">Go Back</a>
+
     <h1>Flight Details</h1>
     <div><strong>Airline: </strong>
         <%= flight.airline %>
@@ -23,19 +29,47 @@
         <%= flight.departs %>
     </div>
     <div><strong>Destination: </strong>
-        <%= flight.destinations %>
+        <%= flight.departs %>
     </div>
-    <h2>Destination:</h2>
-    <form action="/flights/<%= flight._id %>/destinations" method="POST">
-        <select name="airport" id="">
-            <option value="AUS">AUS</option>
-            <option value="DFW">DFW</option>
-            <option value="DEN">DEN</option>
-            <option value="LAX">LAX</option>
-            <option value="SAN">SAN</option>
-            <input type="submit" value="Add Destination">
-        </select>
-    </form>
+    <br>
+    <h2>Destinations: </h2>`
+
+    <% flight.destinations.forEach(d=> { %>
+        <li>
+            <%= d.airport %>
+        </li>
+        <li>
+            <%= d.arrival %>
+        </li>
+        <% }) %>
+
+
+            <form action="/flights/<%= flight._id %>/destinations" method="POST">
+                <select name="airport" id="">
+                    <option value="AUS">AUS</option>
+                    <option value="DFW">DFW</option>
+                    <option value="DEN">DEN</option>
+                    <option value="LAX">LAX</option>
+                    <option value="SAN">SAN</option>
+                    <option value="HNL">HNL</option>
+                    <option value="ATL">ATL</option>
+                    <option value="BOS">BOS</option>
+
+                    <div>
+                        <input type="datetime-local" name="arrival" id="date-time">
+                    </div>
+                    <br>
+                    <input type="submit" value="Add Destination">
+                    <br>
+                    <h4>Seat: </h4>
+                    <input id="seat-id" placeholder="A1-F9" name="seat" required pattern="[A-F][1-9]\d?">
+                    <button id="new-ticket"><a href="views/flights/tickets/new.ejs">New Ticket</a></button>
+                </select>
+            </form>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+                crossorigin="anonymous"></script>
 </body>
 
 </html>
