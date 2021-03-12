@@ -1,6 +1,5 @@
 body {
-  background: silver;
-  text-align: center;
+  background: #fcd5ce;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
@@ -11,8 +10,40 @@ a {
 
 h1 {
   text-align: center;
+  
+  background: black;
 }
 
 #seat-id {
   text-align: center;
+}
+
+.topnav {
+  border:5px solid #ba181b;
+  border-bottom: 0;
+  padding: 20px;
+  background: black;
+  text-align: right;
+  margin-bottom: 0px;
+}
+
+table {
+  background: #ba181b;
+  text-align: inherit;
+  box-shadow: 5px 10px black;
+  margin-top: 0;
+  width: 168vh;
+}
+
+#home-btn {
+  margin: 2px;
+}
+
+#flight-list {
+  color:#ba181b;
+  padding: 35px;
+  margin-top: 0;
+  margin-bottom: 0;
+  border:5px solid #ba181b;
+
 }
